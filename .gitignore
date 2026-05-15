@@ -2,3 +2,9 @@
 *.swp
 .tmp/
 .clawhub/
+
+# secrets — auth cookies / tokens in any skill
+**/cookie.txt
+**/cookies.txt
+**/.env
+**/.env.local
