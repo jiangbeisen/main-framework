@@ -23,14 +23,15 @@ metadata:
 ## Quick Run
 
 ```bash
+# 先 cd 到本 skill 目录（路径取决于本机安装位置）
 D=2026-05-05     # 不传则默认昨天 UTC
-python3 ~/work/skills/popup-fyp-monitor/scripts/prepare.py $D
-python3 ~/work/skills/popup-fyp-monitor/scripts/create_sheet.py $D
+python3 scripts/prepare.py $D
+python3 scripts/create_sheet.py $D
 # 然后进入 Claude 视觉循环（见下方 workflow），每批结束追加：
-python3 ~/work/skills/popup-fyp-monitor/scripts/append_hits.py $D
+python3 scripts/append_hits.py $D
 # 全部判完：
-python3 ~/work/skills/popup-fyp-monitor/scripts/embed_images.py $D
-python3 ~/work/skills/popup-fyp-monitor/scripts/finalize_layout.py $D
+python3 scripts/embed_images.py $D
+python3 scripts/finalize_layout.py $D
 ```
 
 视觉循环不能脚本化（必须 Claude Read 图片做判定）。每判一张往 `/tmp/popup_<D>/verdicts.jsonl` 追加一行 JSON：

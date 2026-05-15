@@ -8,7 +8,8 @@ Usage: python3 prepare.py YYYY-MM-DD
 """
 import datetime, json, os, subprocess, sys, urllib.request
 
-FEEDBACK_DIR = os.path.expanduser("~/work/skills/feedback")
+SKILLS_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+FEEDBACK_DIR = os.path.join(SKILLS_DIR, "feedback")
 FEEDBACK_PY = os.path.join(FEEDBACK_DIR, "feedback.py")
 COOKIE_PATH = os.path.join(FEEDBACK_DIR, "cookie.txt")
 KEYWORD = "pop up"
